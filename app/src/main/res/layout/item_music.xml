@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.domain.models.DataTicketOffer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_music"
+            android:layout_marginVertical="5dp"
+            android:scaleType="centerCrop"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:src="@drawable/placeholder_music"
+            app:riv_corner_radius="8dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/music_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxWidth="130dp"
+            android:maxLines="1"
+            android:text="@{item.title}"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:text="Aman" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_direction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:maxWidth="130dp"
+            android:text="@{item.town}"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:text="Aman" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxWidth="130dp"
+            android:maxLines="1"
+            android:text="@{item.priceValue()}"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/sf_pro_medium"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:text="Aman" />
+    </LinearLayout>
+</layout>
